@@ -1,0 +1,26 @@
+# MyAgent default config. Override with env vars (OLLAMA_HOST, OLLAMA_MODEL, …).
+
+model:
+  host: http://127.0.0.1:11434
+  name: qwen3.5:9b
+  timeout_sec: 120
+
+agent:
+  max_turns: 8
+  tool_timeout_sec: 15
+  workspace: .   # relative to project root; used by read_file / list_dir
+
+skills:
+  dir: skills
+  # If true, only inject skills whose description matches the user message.
+  match: true
+
+mcp:
+  servers:
+    demo:
+      transport: stdio
+      command: python
+      args:
+        - mcp/demo_server.py
+      # set enabled: false to skip without deleting the entry
+      enabled: true

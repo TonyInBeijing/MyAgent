@@ -1,16 +1,12 @@
 # MyAgent
 
-A learning-oriented personal agent for understanding **Tool / MCP / Skill**, powered by local Ollama `qwen3.5:9b`.
-
-Inspired by [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness): one Tool registry, an agent loop, and an MCP bridge that registers remote tools as `mcp__server__tool` — without Cordis or a Web UI.
-
-See [README.md](README.md) for the full Chinese guide (concepts, layout, and three demos).
+A FastAPI service skeleton for the MyAgent project, with one example endpoint.
 
 ```bash
-./scripts/start.sh --ollama-only
 conda activate my-agent
 pip install -e .
-myagent -v chat "compute (12 * 34) + 5"
-myagent tools
-myagent skills
+myagent
+curl http://127.0.0.1:8000/api/v1/hello
 ```
+
+See [README.md](README.md) for the Chinese guide.
